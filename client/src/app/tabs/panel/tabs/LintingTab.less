@@ -1,8 +1,8 @@
 :local(.LintingIssue) {
-  align-items: center;
-  border-bottom: solid 1px var(--color-grey-225-10-75);
   display: flex;
-  padding: 6px 8px 4px 8px;
+  align-items: flex-start;
+  padding: 4px 8px 2px 8px;
+  border-bottom: solid 1px var(--color-grey-225-10-95);
 
   &:last-child {
     border-bottom: none;
@@ -16,7 +16,8 @@
   }
 
   .linting-issue__text {
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 20px;
     user-select: text;
 
     * {
@@ -24,11 +25,17 @@
     }
 
     .linting-issue__link {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       background-color: var(--color-blue-205-100-95);
       border-radius: 4px;
       margin-left: 4px;
       margin-right: 4px;
-      padding: 2px 4px;
+      padding: 1px 4px;
       cursor: default;
   
       &:hover {
