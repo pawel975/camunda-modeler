@@ -751,9 +751,9 @@ describe('cloud-bpmn - <BpmnEditor>', function() {
       });
 
       const lintError = {
-        id: 'foo',
-        message: 'bar',
-        path: [ 'foo', 'bar' ]
+        propertiesPanel: {
+          entryId: 'taskDefinition'
+        }
       };
 
       // when
@@ -766,11 +766,8 @@ describe('cloud-bpmn - <BpmnEditor>', function() {
 
       // then
       expect(fireSpy).to.have.been.calledOnce;
-      expect(fireSpy).to.have.been.calledWithMatch('propertiesPanel.showError', {
-        focus: true,
-        id: 'foo',
-        message: 'bar',
-        path: [ 'foo', 'bar' ]
+      expect(fireSpy).to.have.been.calledWithMatch('propertiesPanel.showEntry', {
+        id: 'taskDefinition'
       });
 
       expect(scrollToElementSpy).to.have.been.calledOnceWith(element);
